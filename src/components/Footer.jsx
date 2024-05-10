@@ -29,11 +29,28 @@ export default function Footer() {
           <div className="col-lg-4 col-md-12">
             <h4 style={{ fontFamily: "Arial", fontSize: "18px", marginBottom: "10px" }}>Follow Us</h4>
             <ul className="social-icons" style={{ listStyle: "none", padding: 0 }}>
-              <li style={{ display: "inline-block", marginRight: "10px" }}><Link to="#" style={{ color: "#333", textDecoration: "none", fontSize: "24px" }}><FacebookIcon /></Link></li>
-              <li style={{ display: "inline-block", marginRight: "10px" }}><Link to="#" style={{ color: "#333", textDecoration: "none", fontSize: "24px" }}><TwitterIcon /></Link></li>
-              <li style={{ display: "inline-block", marginRight: "10px" }}><Link to="#" style={{ color: "#333", textDecoration: "none", fontSize: "24px" }}><LinkedInIcon /></Link></li>
-              <li style={{ display: "inline-block", marginRight: "10px" }}><Link to="#" style={{ color: "#333", textDecoration: "none", fontSize: "24px" }}><InstagramIcon /></Link></li>
-            </ul>
+  <li style={{ display: "inline-block", marginRight: "10px" }}>
+    <Link to="#" style={{ color: "#333", textDecoration: "none", fontSize: "24px" }} target="_blank">
+      <FacebookIcon />
+    </Link>
+  </li>
+  <li style={{ display: "inline-block", marginRight: "10px" }}>
+    <Link to="https://twitter.com/Anantvedha0705?t=_YQFQT3TNCBt47YfqkAhMg&s=08" style={{ color: "#333", textDecoration: "none", fontSize: "24px" }} target="_blank">
+      <TwitterIcon />
+    </Link>
+  </li>
+  <li style={{ display: "inline-block", marginRight: "10px" }}>
+    <Link to="#" style={{ color: "#333", textDecoration: "none", fontSize: "24px" }} target="_blank">
+      <LinkedInIcon />
+    </Link>
+  </li>
+  <li style={{ display: "inline-block", marginRight: "10px" }}>
+    <Link to="https://www.instagram.com/anantvedha07/" style={{ color: "#333", textDecoration: "none", fontSize: "24px" }} target="_blank">
+      <InstagramIcon />
+    </Link>
+  </li>
+</ul>
+
           </div>
         </div>
       </div>
