@@ -1,0 +1,28 @@
+
+
+  .content-enter {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+  
+  .content-enter-active {
+    opacity: 1;
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 1s ease-in-out, opacity 0.6s ease-in-out;
+  }
+  
+  .content-exit {
+    opacity: 1;
+    max-height: 1000px;
+    overflow: hidden;
+  }
+  
+  .content-exit-active {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
