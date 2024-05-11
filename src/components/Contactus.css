@@ -1,0 +1,100 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .left-section {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px; /* Changed from margin-right to margin-bottom */
+  }
+  
+  .right-section {
+    width: 100%;
+  }
+  
+  .form-card {
+    background-color: #e0f5ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .heading {
+    font-size: 2rem; /* Adjusted font size for better readability */
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    font-size: 1.1rem; /* Adjusted font size for better consistency */
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .input,
+  .textarea {
+    width: 100%;
+    padding: 10px; /* Adjusted padding for better spacing */
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  
+  .textarea {
+    resize: vertical;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Adjusted transition property */
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+  
+  .contact-image {
+    width: 100%;
+    max-width: 100%; /* Added max-width to ensure image responsiveness */
+    border-radius: 10px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .container {
+      flex-direction: row;
+      justify-content: center; /* Added to center content horizontally */
+      align-items: flex-start; /* Added to align items to the top */
+    }
+  
+    .left-section {
+      margin-right: 20px;
+      margin-bottom: 0; /* Removed margin-bottom */
+    }
+  
+    .right-section {
+      width: 50%; /* Adjusted width for better layout */
+    }
+  }
+  

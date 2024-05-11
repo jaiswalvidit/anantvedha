@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { IconButton } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import './About.css';
 
 const AboutUs = () => {
@@ -41,12 +44,9 @@ const AboutUs = () => {
         <div className="card-body" onClick={() => toggleSection(index)}>
           <div className="d-flex justify-content-between align-items-center">
             <h5 className="card-title">{section.title}</h5>
-            <button
-              className="btn btn-link"
-              style={{ fontSize: '1.5rem', color: '#007bff' }}
-            >
-              {expandedSections[index] ? '↓' : '→'}
-            </button>
+            <IconButton style={{ fontSize: '1.5rem', color: '#007bff' }}>
+              {expandedSections[index] ? <ExpandMoreIcon /> : <ChevronRightIcon />}
+            </IconButton>
           </div>
           <CSSTransition
             in={expandedSections[index]}
@@ -62,8 +62,8 @@ const AboutUs = () => {
   ));
 
   return (
-    <div className="container">
-      <h2 className="mt-4 mb-4">About Anantvedha Edutech</h2>
+    <div className="m-4">
+      <h2 className="mt-4 mb-6">About Us</h2>
       <div className="row">
         {sectionCards}
       </div>
