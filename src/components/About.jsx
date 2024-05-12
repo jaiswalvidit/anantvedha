@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { IconButton } from '@mui/material';
+import { IconButton, Card } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import './About.css';
@@ -31,6 +31,23 @@ const AboutUs = () => {
 
   const [expandedSections, setExpandedSections] = useState({});
 
+  useEffect(() => {
+    const handleResize = () => {
+      const isSmallScreen = window.innerWidth < 768;
+      if (isSmallScreen) {
+        // Close all sections on small screens
+        setExpandedSections({});
+      }
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const toggleSection = (index) => {
     setExpandedSections(prevState => ({
       ...prevState,
@@ -39,12 +56,12 @@ const AboutUs = () => {
   };
 
   const sectionCards = sections.map((section, index) => (
-    <div className="col-md-6" key={index}>
-      <div className="card mb-4">
+    <div className="lg:w-1/2 sm:w-full md:w-full p-2" key={index}>
+      <Card variant="outlined">
         <div className="card-body" onClick={() => toggleSection(index)}>
-          <div className="d-flex justify-content-between align-items-center">
+          <div className="flex justify-between items-center">
             <h5 className="card-title">{section.title}</h5>
-            <IconButton style={{ fontSize: '1.5rem', color: '#007bff' }}>
+            <IconButton className="text-blue-500">
               {expandedSections[index] ? <ExpandMoreIcon /> : <ChevronRightIcon />}
             </IconButton>
           </div>
@@ -54,17 +71,17 @@ const AboutUs = () => {
             classNames="content"
             unmountOnExit
           >
-            <p className="card-text text-secondary">{section.content}</p>
+            <p className="card-text text-gray-500">{section.content}</p>
           </CSSTransition>
         </div>
-      </div>
+      </Card>
     </div>
   ));
 
   return (
-    <div className="m-4">
-      <h2 className="mt-4 mb-6">About Us</h2>
-      <div className="row">
+    <div className="join join-vertical w-full">
+     <div className="text-3xl md:text-5xl text-blue-900 text-center mt-8">About Us</div>
+      <div className="collapse collapse-arrow join-item border border-gray-300 p-4">
         {sectionCards}
       </div>
     </div>

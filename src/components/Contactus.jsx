@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import "./Contactus.css"; // Import CSS file for styling
+import { Button, Typography, Grid, TextField } from '@mui/material';
+import "./Contactus.css"; // Import CSS file for additional styling
 
 function ContactUs() {
   // State variables for form fields
@@ -38,51 +39,68 @@ function ContactUs() {
   };
 
   return (
-    <div className="container">
-      <div className="left-section">
-        {/* Replace the content here with the contact form */}
-        <div className="form-card">
-          <div className="fs-1 text-center fw-2">Get in touch</div>
-          <form className="form" onSubmit={handleSubmit}>
-            <div className='form-group'>
-              <label htmlFor="name" className="label">Name</label>
-              <input
-                type="text"
-                id="name"
+    <div className="flex justify-center items-center h-screen bg-gray-100">
+      <div className="w-full md:w-1/2 p-8 bg-white shadow-lg rounded-lg">
+        <Typography variant="h5" className="mb-4 text-center text-gray-800">
+          Get in touch
+        </Typography>
+        <form onSubmit={handleSubmit}>
+          <Grid container direction="column" spacing={2}>
+            <Grid item className="mb-4">
+              <TextField
+                label="Name"
+                variant="outlined"
+                fullWidth
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="input"
+                error={!!errors.name}
+                helperText={errors.name}
+                className="bg-gray-100"
               />
-              {errors.name && <span className="error">{errors.name}</span>}
-            </div>
-            <div className='form-group'>
-              <label htmlFor="email" className="label">Email address</label>
-              <input
+            </Grid>
+            <Grid item className="mb-4">
+              <TextField
+                label="Email"
+                variant="outlined"
                 type="email"
-                id="email"
+                fullWidth
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="input"
+                error={!!errors.email}
+                helperText={errors.email}
+                className="bg-gray-100"
               />
-              {errors.email && <span className="error">{errors.email}</span>}
-            </div>
-            <div className='form-group'>
-              <label htmlFor="message" className="label">Message</label>
-              <textarea
-                id="message"
-                rows="3"
+            </Grid>
+            <Grid item className="mb-4">
+              <TextField
+                label="Message"
+                variant="outlined"
+                multiline
+                rows={4}
+                fullWidth
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="textarea"
-              ></textarea>
-              {errors.message && <span className="error">{errors.message}</span>}
-            </div>
-            <button type="submit" className="btn1">Submit</button>
-          </form>
-        </div>
+                error={!!errors.message}
+                helperText={errors.message}
+                className="bg-gray-100"
+              />
+            </Grid>
+            <Grid item>
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                fullWidth
+                className="hover:bg-blue-700 transition-colors duration-300"
+              >
+                Submit
+              </Button>
+            </Grid>
+          </Grid>
+        </form>
       </div>
-      <div className="right-section">
-        {/* Replace the content here with a suitable picture for the contact us page */}
+      <div className="hidden md:block md:w-1/2">
+        {/* Replace the image source with your own contact image */}
         <img src="contact_us_image.jpg" alt="Contact Us" className="contact-image" />
       </div>
     </div>

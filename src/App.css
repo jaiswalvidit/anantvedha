@@ -1,4 +1,6 @@
-@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
+
 * {
   box-sizing: border-box;
 }
@@ -264,56 +266,40 @@ h1 {
   }
 }
 
-/* Navbar styles */
-.navbar-brand {
-  color: #333;
-  font-weight: bold;
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.navbar-toggler {
-  border: none;
+.logo {
+  width: 50px;
 }
 
-.navbar-nav .nav-link {
-  color: #333;
-  transition: color 0.3s ease-in-out;
+.nav-item {
+  display: inline-block;
+  margin: 10px 20px;
+  list-style: none;
 }
 
-.navbar-nav .nav-link:hover {
-  color: #555; /* Change color on hover */
+.nav-link{
+  color: rgb(37, 38, 51);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  position: relative;
 }
 
-/* Active link styles */
-.nav-link.active {
-  color: #555;
+.nav-link::after {
+  content: '';
+  width: 0%;
+  height: 3px;
+  background: red;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: width 0.4s ease;
 }
 
-/* Navbar collapse animation */
-.navbar-collapse {
-  transition: height 0.3s ease-in-out;
-}
-
-/* Navbar animation when toggled */
-.navbar-toggler:focus + .navbar-collapse, .navbar-toggler:active + .navbar-collapse {
-  transition: height 0.3s ease-in-out;
-}
-
-
-/* AboutUs.css */
-.content-enter {
-  opacity: 0;
-}
-
-.content-enter-active {
-  opacity: 1;
-  transition: opacity 300ms;
-}
-
-.content-exit {
-  opacity: 1;
-}
-
-.content-exit-active {
-  opacity: 0;
-  transition: opacity 300ms;
-}
