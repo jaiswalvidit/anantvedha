@@ -10,13 +10,13 @@ import NewHeader from './components/NewHeader';
 // index.js or App.js
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Team from './components/Team';
+import AccountProvider from './components/context/AccountProvider';
 
 
 function App() {
   return (
     <>
-    
-      <Router>
+    <AccountProvider><Router>
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <NewHeader/>
         
@@ -33,7 +33,8 @@ function App() {
         
         
       </div>
-     </Router>
+     </Router></AccountProvider>
+      
     </>  
   );
 }

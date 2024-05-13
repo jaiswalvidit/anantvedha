@@ -77,7 +77,23 @@ export default function Carousel() {
       {imageUrls.map((imageUrl, index) => (
         <div key={index} className={`carousel-item relative w-full ${index === activeIndex ? 'block' : 'hidden'}`} style={{ height: "95vh" }}>
           <div className="flex flex-col md:flex-row justify-between items-center w-full">
-            <div className={`w-full md:w-1/2 p-0 ${isSmallScreen ? 'absolute' : 'relative'} ${isSmallScreen ? 'z-10' : ''}`} style={{ height: isSmallScreen ? '80vh' : '80vh', backgroundColor: isSmallScreen ? 'transparent' : imageUrl.color, paddingTop: '2rem', paddingBottom: '2rem' , borderTopLeftRadius: '20%', borderBottomLeftRadius: '20%' ,marginLeft:'5%' }}>
+          <div
+  className={`w-full md:w-1/2 p-0 ${isSmallScreen ? 'absolute z-10' : 'relative'}`}
+  style={{
+    height: '80vh',
+    backgroundColor: isSmallScreen ? 'transparent' : imageUrl.color,
+   
+    ...(isSmallScreen
+      ? {borderRadius:'5px',width:'80vw',fontWeight:'600',color:'whitesmoke'}
+      : {
+          borderTopLeftRadius: '20%',
+          borderBottomLeftRadius: '20%',
+          marginLeft: '5%',
+          paddingTop: '2rem',
+          paddingBottom: '2rem',
+        })
+  }}
+>
             <div className="text-4xl text-secondary p-10 m-auto" style={{ padding: '10px auto', textAlign: 'center' }}>{imageUrl.title}</div>
 
               <CSSTransition
@@ -91,7 +107,34 @@ export default function Carousel() {
             </div>
             <div className="w-full md:w-1/2 p-0 relative z-0">
               <div className="aspect-w-16 aspect-h-9">
-                <img src={imageUrl.image} alt={`Slide ${index + 1}`} className="object-cover object-center w-full" style={{ height: '80vh',marginRight:'20px' ,width:'40vw',borderTopRightRadius:'20%',borderBottomRightRadius:'20%' }} />
+              <img
+  src={imageUrl.image}
+  alt={`Slide ${index + 1}`}
+  className="object-cover object-center w-full"
+  style={{
+    height: '80vh',
+    marginRight: '20px',
+    width: isSmallScreen ? '90vw' : '40vw',
+    ...(isSmallScreen
+      ? {
+          borderRadius: '5px',
+          margin: '2px auto',
+          backgroundColor: 'rgba(255, 0, 0, 0.8)',
+          zIndex: '-2',
+          backdropFilter: 'blur(5px)',
+          WebkitBackdropFilter: 'blur(5px)',
+          // backgroundColor: 'rgba(255, 0, 0, 0.8)',
+          backdropOpacity: '95',
+          backdropInvert: 'bg-white/30',
+        }
+      : {
+          borderTopRightRadius: '20%',
+          borderBottomRightRadius: '20%',
+          // marginLeft: '5%'
+        })
+  }}
+  
+/>
               </div>
             </div>
           </div>
