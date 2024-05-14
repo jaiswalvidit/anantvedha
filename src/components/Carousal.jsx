@@ -73,7 +73,7 @@ export default function Carousel() {
   };
 
   return (
-    <div className="carousel w-full relative">
+    <div className="carousel w-full relative " style={{marginTop:'12vh'}}>
       {imageUrls.map((imageUrl, index) => (
         <div key={index} className={`carousel-item relative w-full ${index === activeIndex ? 'block' : 'hidden'}`} style={{ height: "95vh" }}>
           <div className="flex flex-col md:flex-row justify-between items-center w-full">
@@ -81,6 +81,7 @@ export default function Carousel() {
   className={`w-full md:w-1/2 p-0 ${isSmallScreen ? 'absolute z-10' : 'relative'}`}
   style={{
     height: '80vh',
+    object:'contain',
     backgroundColor: isSmallScreen ? 'transparent' : imageUrl.color,
    
     ...(isSmallScreen

@@ -56,7 +56,7 @@ const AboutUs = () => {
   };
 
   const sectionCards = sections.map((section, index) => (
-    <div className="lg:w-1/2 sm:w-full md:w-full p-2" key={index}>
+    <div className="lg:w-1/2 sm:w-full md:w-full p-2" style={{ width: '100%' }} key={index}>
       <Card variant="outlined">
         <div className="card-body" onClick={() => toggleSection(index)}>
           <div className="flex justify-between items-center">
@@ -68,7 +68,7 @@ const AboutUs = () => {
           <CSSTransition
             in={expandedSections[index]}
             timeout={300}
-            classNames="content"
+            classNames="fade"
             unmountOnExit
           >
             <p className="card-text text-gray-500">{section.content}</p>
@@ -80,8 +80,8 @@ const AboutUs = () => {
 
   return (
     <div className="join join-vertical w-full">
-     <div className="text-3xl md:text-5xl text-blue-900 text-center mt-8">About Us</div>
-      <div className="collapse collapse-arrow join-item border border-gray-300 p-4">
+      <div className="text-3xl md:text-5xl text-blue-900 text-center mt-8">About Us</div>
+      <div className="collapse collapse-arrow join-item border border-gray-600 py-2 grid grid-cols-1 md:grid-cols-2" style={{ width: '80vw', margin: '0 auto' }}>
         {sectionCards}
       </div>
     </div>

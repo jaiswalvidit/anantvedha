@@ -11,6 +11,7 @@ import NewHeader from './components/NewHeader';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Team from './components/Team';
 import AccountProvider from './components/context/AccountProvider';
+import FirstScreen from './components/FirstScreen';
 
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
     <>
     <AccountProvider><Router>
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-        <NewHeader/>
+        <NewHeader  />
+        {/* <FirstScreen/> */}
         
         <div style={{ flex: 1, overflow: 'auto' }}>
           <Routes>

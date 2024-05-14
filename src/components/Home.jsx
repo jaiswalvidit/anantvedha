@@ -7,6 +7,7 @@ import Card from './Card'
 import Team from './Team'
 import Rotate from './Rotate'
 import { AccountContext } from './context/AccountProvider'
+import FirstScreen from './FirstScreen'
 // import AccountProvider from './context/AccountProvider'
 // import Carousal from './Carousal'
 
@@ -21,9 +22,11 @@ export default function Home() {
       <Rotate style={{position:'absolute',margin:'50vh 5px'}}/>
     <Carousal/>
     <Card/>
-    <AboutUs/>
-    <Team/>
+   
     
+    <Team/>
+    <AboutUs/>
+    <FirstScreen/>
     <Contactus/>
     <Footer/>
     

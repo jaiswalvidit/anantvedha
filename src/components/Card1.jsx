@@ -2,11 +2,13 @@ import React from 'react';
 
 const Card1 = ({ imageSrc, title, description }) => {
   return (
-    <div className="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden mx-4 my-4 transform transition duration-500 hover:rotate-y-180 cursor-pointer">
+    <div className="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden mx-2 my-1 transform transition duration-500 hover:rotate-y-180 cursor-pointer">
       <div className="grid grid-cols-1 gap-4">
-        <div className="flex justify-center items-center h-32 bg-gray-200">
-          <img className="rounded-full h-20 w-20 object-cover transform transition duration-500 hover:scale-150" src={imageSrc} alt="Team member" />
-        </div>
+      <div className="avatar">
+  <div className="w-20 rounded-full ring ring-primary ring-offset-base-100 ring-offset-1" style={{margin:' 2px auto', padding:'auto'}}>
+    <img src={imageSrc} alt="name" />
+  </div>
+</div>
         <div className="py-4 px-6">
           <h1 className="text-xl font-semibold text-gray-800">{title}</h1>
           <p className="py-2 text-gray-700">{description}</p>

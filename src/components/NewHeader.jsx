@@ -3,6 +3,21 @@ import { Link } from 'react-router-dom';
 import img1 from './images/startup/img5.jpg';
 import { AccountContext } from './context/AccountProvider';
 import Rotate from './Rotate';
+import { styled } from '@mui/material/styles';
+
+// Custom styled component for Link with underline effect
+const StyledLink = styled(Link)(({ theme }) => ({
+  textDecoration: 'none',
+  color: 'inherit',
+  '&:hover': {
+    // textDecoration: 'underline',
+    
+    textDecorationColor: 'red',
+    // width: '70%',
+    // padding: '2px ',
+    textDecorationThickness: '0.1em',
+  },
+}));
 
 export default function NewHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,11 +32,12 @@ export default function NewHeader() {
   const textColor = mode ? 'text-white' : 'text-black';
 
   return (
-    <div className={`navbar ${backgroundColor} font-bold text-lg flex items-center justify-between px-4`}>
+    <div className={`navbar ${backgroundColor} font-bold text-lg flex items-center justify-between px-4`} style={{position:'fixed',zIndex:'40'}}>
       <div className="flex items-center">
         <div className="navbar-start mr-4 flex items-center">
           <img src={img1} alt="Your Logo" className="rounded-full object-contain" style={{ height: '50px' }} />
-          <Link to="/" className={`btn btn-ghost text-4xl ${textColor}`} onClick={toggleMenu}>AnantVedha</Link>
+          {/* Use StyledLink component instead of Link */}
+          <StyledLink to="/" className={`btn btn-ghost text-4xl ${textColor}`} onClick={toggleMenu}>AnantVedha</StyledLink>
         </div>
       </div>
       <div className="navbar-end flex items-center">
@@ -32,20 +48,22 @@ export default function NewHeader() {
             </svg>
           </div>
           <ul className={`menu menu-md dropdown-content absolute top-full right-0 z-[20] m-2 p-2 shadow ${backgroundColor} rounded-box w-52 ${isOpen ? 'block' : 'hidden'}`}>
-            <li><Link to="/" className={`text-xl ${textColor}`} onClick={toggleMenu}>Home</Link></li>
-            <li><Link to="/about" className={`text-xl ${textColor}`} onClick={toggleMenu}>About us</Link></li>
-            <li><Link to="/contact" className={`text-xl ${textColor}`} onClick={toggleMenu}>Connect us</Link></li>
-            <li><Link to="/team" className={`text-xl ${textColor}`} onClick={toggleMenu}>Our Teams</Link></li>
+            {/* Use StyledLink component for each link */}
+            <li><StyledLink to="/" className={`text-xl ${textColor}`} onClick={toggleMenu}>Home</StyledLink></li>
+            <li><StyledLink to="/about" className={`text-xl ${textColor}`} onClick={toggleMenu}>About us</StyledLink></li>
+            <li><StyledLink to="/contact" className={`text-xl ${textColor}`} onClick={toggleMenu}>Connect us</StyledLink></li>
+            <li><StyledLink to="/team" className={`text-xl ${textColor}`} onClick={toggleMenu}>Our Teams</StyledLink></li>
           </ul>
         </div>
       </div>
       {/* <Rotate/> */}
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal ">
-          <li><Link to="/" className={`text-xl ${textColor}`} onClick={toggleMenu}>Home</Link></li>
-          <li><Link to="/about" className={`text-xl ${textColor}`} onClick={toggleMenu}>About Us</Link></li>
-          <li><Link to="/contact" className={`text-xl ${textColor}`} onClick={toggleMenu}>Contact Us</Link></li>
-          <li><Link to="/team" className={`text-xl ${textColor}`} onClick={toggleMenu}>Our Teams</Link></li>
+          {/* Use StyledLink component for each link */}
+          <li><StyledLink to="/" className={`text-xl ${textColor}`} onClick={toggleMenu}>Home</StyledLink></li>
+          <li><StyledLink to="/about" className={`text-xl ${textColor}`} onClick={toggleMenu}>About Us</StyledLink></li>
+          <li><StyledLink to="/contact" className={`text-xl ${textColor}`} onClick={toggleMenu}>Contact Us</StyledLink></li>
+          <li><StyledLink to="/team" className={`text-xl ${textColor}`} onClick={toggleMenu}>Our Teams</StyledLink></li>
         </ul>
       </div>
     </div>
