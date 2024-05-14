@@ -48,5 +48,16 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwBPbEaEIAFG0trfL45xBUr0te5XEo9d422Q3BMgogNo9a6k7VAEcPZXxh1Yn1E6pZvCg/exec'
+      const form = document.forms['submit-to-google-sheet']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
   </body>
 </html>

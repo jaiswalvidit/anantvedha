@@ -26,7 +26,7 @@ export default function Home() {
     
     <Team/>
     <AboutUs/>
-    <FirstScreen/>
+    {/* <FirstScreen/> */}
     <Contactus/>
     <Footer/>
     
