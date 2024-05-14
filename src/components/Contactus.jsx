@@ -8,7 +8,7 @@ function ContactUs() {
   const [message, setMessage] = useState('');
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false); // State for form submission success
-  const url="http://localhost:8003";
+  const url="https://backend-k4dp.onrender.com";
   const handleSubmit = async (e) => {
     e.preventDefault();
     const errors = {};

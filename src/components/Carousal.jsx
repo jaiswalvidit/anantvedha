@@ -4,6 +4,7 @@ import img2 from './images/startup/img2.jpg';
 import img3 from './images/startup/img3.jpg';
 import img4 from './images/startup/img4.jpeg';
 import { CSSTransition } from 'react-transition-group';
+import 'animate.css';
 
 export default function Carousel() {
   const imageUrls = [
@@ -11,7 +12,7 @@ export default function Carousel() {
       image: img1,
       title: 'Enhance Your Practical Skills',
       color:'#b3ffff',
-      caption: "AnantVedha is a workspace where young minds can give shape to their ideas through hands on do-it-yourself mode and learn innovation skills. Young children will get a chance to work with tools and equipment to understand the concepts of STEM (Science, Technology, Engineering and Math)."
+      caption: "AnantVedha is a workspace where young minds can give shape to their ideas through hands-on do-it-yourself mode and learn innovation skills. Young children will get a chance to work with tools and equipment to understand the concepts of STEM (Science, Technology, Engineering and Math)."
     },
     {
       image: img4,
@@ -23,13 +24,13 @@ export default function Carousel() {
       image: img3,
       color:'#fff3e6',
      title:' Unlock the Power of Future Technologies',
-      caption: 'To empower our youth with the 21 century skills of creativity, innovation, critical thinking, design thinking . By empowering youth with future technology, we can unleash their potential to drive innovation, solve complex problems'
+      caption: 'To empower our youth with the 21st-century skills of creativity, innovation, critical thinking, design thinking. By empowering youth with future technology, we can unleash their potential to drive innovation, solve complex problems'
     },
     {
       image: img2,
-      title:'Explore different carrers',
+      title:'Explore different careers',
       color:'#ffe6ff',
-      caption: 'Embarking on a journey to explore different careers opens up a world of opportunities and possibilities.From delving into the intricate realm of electronics to pioneering innovations in aerospace engineering, from unraveling the mysteries of Artificial Intelligence (AI) to harnessing the power of Machine Learning (ML), the landscape of career choices is vast and diverse.'
+      caption: 'Embarking on a journey to explore different careers opens up a world of opportunities and possibilities. From delving into the intricate realm of electronics to pioneering innovations in aerospace engineering, from unraveling the mysteries of Artificial Intelligence (AI) to harnessing the power of Machine Learning (ML), the landscape of career choices is vast and diverse.'
     }
   ];
 
@@ -95,7 +96,20 @@ export default function Carousel() {
         })
   }}
 >
-            <div className="text-4xl text-secondary p-10 m-auto" style={{ padding: '10px auto', textAlign: 'center' }}>{imageUrl.title}</div>
+<div
+  className={`text-4xl text-secondary p-10 m-auto animate__animated ${isSmallScreen ? 'animate__fadeIn' : ''}`}
+  style={{ padding: '10px auto', textAlign: 'center' }}
+>
+  {imageUrl.title.split(' ').map((word, index) => (
+    <span
+      key={index}
+      className="inline-block animate__animated animate__fadeIn"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      {word}&nbsp;
+    </span>
+  ))}
+</div>
 
               <CSSTransition
                 in={index === activeIndex}
@@ -104,7 +118,7 @@ export default function Carousel() {
                 unmountOnExit
               >
                <p
-  className={`text-sm md:text-xl ${isSmallScreen ? 'text-white' : 'text-white-50'} p-2 md:p-10 rounded-md text-center word-spacing`}
+  className={`text-base md:text-xl ${isSmallScreen ? 'text-white' : 'text-white-50'} p-2 md:p-10 rounded-md text-center word-spacing`}
 >
   {imageUrl.caption}
 </p>

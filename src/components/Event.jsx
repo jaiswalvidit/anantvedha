@@ -80,7 +80,7 @@ export default function Event() {
   const renderCard = (index) => {
     return (
       <div className="card card-side bg-base-100 shadow-xl m-10 flex flex-col md:flex-row">
-        <figure className="md:w-2/5 md:order-1" style={{ flexBasis: "40%" }}>
+        <figure className="md:w-2/5 md:order-1" style={{ flexBasis: "40%",margin:'10px 10px',borderRadius:'10px' }}>
           <img
             src={cardsContent[index].image}
             alt="Event"

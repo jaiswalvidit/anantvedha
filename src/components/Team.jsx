@@ -42,8 +42,8 @@ export default function Team() {
               alt="Team member 1"
               className="team-image"
               style={{
-                height: '50vh',
-                width: isSmallScreen ? '50vw' : '20vw',
+                height: isSmallScreen?'40vh' :'50vh',
+                width: isSmallScreen ? '55vw' : '20vw',
                 padding:'4px 0px',
                 marginLeft: isSmallScreen ? 'auto' : '',
                 marginRight: isSmallScreen ? 'auto' : '',
@@ -60,8 +60,8 @@ export default function Team() {
               className="team-image"
               style={{
                 padding:'4px 0px',
-                height: '50vh',
-                width: isSmallScreen ? '50vw' : '20vw',
+                height: isSmallScreen?'40vh' :'50vh',
+                width: isSmallScreen ? '55vw' : '20vw',
                 marginLeft: isSmallScreen ? 'auto' : '22vw',
                 marginTop: isSmallScreen ? '0px' : '-20vh',
                 marginRight: isSmallScreen ? 'auto' : '',
@@ -79,8 +79,8 @@ export default function Team() {
               className="team-image"
               style={{
                 padding:'4px 0px',
-                height: '50vh',
-                width: isSmallScreen ? '50vw' : '20vw',
+                height: isSmallScreen?'40vh' :'50vh',
+                width: isSmallScreen ? '55vw' : '20vw',
                 marginRight: isSmallScreen ? 'auto' : '',
                 marginLeft: isSmallScreen ? 'auto' : '',
                 marginTop: isSmallScreen ? '0px' : '-20vh',
@@ -96,8 +96,8 @@ export default function Team() {
               className="team-image"
               style={{
                 padding:'4px 0px',
-                height:  '50vh' ,
-                width: isSmallScreen ? '50vw' : '20vw',
+                height: isSmallScreen?'40vh' :'50vh',
+                width: isSmallScreen ? '55vw' : '20vw',
                 marginLeft: isSmallScreen ? 'auto' : '22vw',
                 marginTop: isSmallScreen ? '0px' : '-20vh',
                 marginRight: isSmallScreen ? 'auto' : '',
