@@ -3,8 +3,10 @@ import hack from "./images/startup/hack.jpg";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import tex2 from "./images/startup/tex2.jpg";
 import tex4 from "./images/startup/tex4.jpg";
+import tex5 from "./images/startup/tex5.jpg";
+import cert from "./images/startup/cert.jpg";
 export default function Event() {
-  const isOdd = (num) => num % 2 !== 0;
+//   const isOdd = (num) => num % 2 !== 0;
 
   const cardsContent = [
     {
@@ -33,7 +35,7 @@ export default function Event() {
         'In competitive job markets, certifications can give you an edge over other candidates who do not possess them.',
         'Pursuing certifications often involves engaging with a community of professionals in the same field.'
       ],
-      image: hack,
+      image: cert,
     },
 
     {
@@ -51,7 +53,7 @@ export default function Event() {
             'Industry visits provide students with firsthand exposure to how theoretical concepts taught in the classroom are applied in real-world settings, enhancing their understanding and appreciation of academic subjects.',
         ' Industry visits offer students the opportunity to explore various industries, professions, and career paths, helping them make informed decisions about their future academic and career goals.',
             'Industry visits expose students to cutting-edge technologies, processes, and innovations, stimulating their curiosity and creativity and encouraging them to think innovatively.'],
-        image: hack,
+        image: tex5,
       },
     // Define content for other cards similarly
   ];
