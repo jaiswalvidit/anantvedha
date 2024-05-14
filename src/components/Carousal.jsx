@@ -103,7 +103,11 @@ export default function Carousel() {
                 classNames="fade"
                 unmountOnExit
               >
-                <p className="text-xl text-white-50 p-10 rounded-md text-center word-spacing ">{imageUrl.caption}</p>
+               <p
+  className={`text-sm md:text-xl ${isSmallScreen ? 'text-white' : 'text-white-50'} p-2 md:p-10 rounded-md text-center word-spacing`}
+>
+  {imageUrl.caption}
+</p>
               </CSSTransition>
             </div>
             <div className="w-full md:w-1/2 p-0 relative z-0">

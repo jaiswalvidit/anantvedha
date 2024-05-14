@@ -9,6 +9,7 @@ import Rotate from './Rotate'
 import { AccountContext } from './context/AccountProvider'
 import FirstScreen from './FirstScreen'
 import Text from './Text'
+import Event from './Event'
 // import AccountProvider from './context/AccountProvider'
 // import Carousal from './Carousal'
 
@@ -24,7 +25,7 @@ export default function Home() {
     <Carousal/>
     <Text/>
     <Card/>
-   
+   <Event/>
     
     <Team/>
     <AboutUs/>

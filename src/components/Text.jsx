@@ -2,11 +2,11 @@ import React from "react";
 
 export default function Text() {
   return (
-    <div className="container mx-auto px-4 py-8" style={{width:'80vw',padding:'10px',backgroundColor:'blue',borderRadius:'5px',margin:'10px auto'}}>
-      <div className="p-6 bg-white shadow-md rounded-lg ">
-        <h2 className="text-3xl font-bold mb-4 flex justify-center ">What is Steam education?</h2>
+    <div className="container mx-auto px-4 py-8">
+      <div className="p-6 bg-white shadow-md rounded-lg">
+        <h2 className="text-2xl font-bold mb-4 text-center">What is Steam education?</h2>
         <div className="motion-safe:animate-fadeIn">
-          <p className="text-lg leading-relaxed mb-4">
+          <p className="text-base md:text-lg leading-relaxed mb-4">
             STEAM is an acronym which stands for science, technology, engineering,
             arts, and mathematics. In this education, we will teach a child to
             design and create their own imagination in the real world with all
@@ -18,10 +18,10 @@ export default function Text() {
             everything else".
           </p>
         </div>
-        <div className="motion-safe:animate-fadeIn" >
-        <h2 className="text-3xl font-bold mb-4 flex justify-center">Why Steam and not Stem?</h2>
-          <p className="text-lg leading-relaxed mb-4">
-             STEM stands for science, technology,
+        <div className="motion-safe:animate-fadeIn">
+          <h2 className="text-2xl font-bold mb-4 text-center">Why Steam and not Stem?</h2>
+          <p className="text-base md:text-lg leading-relaxed mb-4">
+            STEM stands for science, technology,
             engineering, and mathematics while STEAM adds "arts", However, the
             difference between STEM and STEAM is far greater than tacking on
             another letter or even adding design skills to STEM. while STEM
