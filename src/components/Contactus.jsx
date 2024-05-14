@@ -8,8 +8,8 @@ function ContactUs() {
   const [message, setMessage] = useState('');
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false); // State for form submission success
-
-  const handleSubmit = (e) => {
+  const url="http://localhost:8003";
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const errors = {};
     if (!name.trim()) {
@@ -24,22 +24,35 @@ function ContactUs() {
       errors.message = 'Message is required';
     }
     setErrors(errors);
-  
+
     if (Object.keys(errors).length === 0) {
-      setIsSubmitted(true); // Set form submission success to true
-      // Optionally, you can reset the form fields here
-     
-  
-      // Set a timeout to reset the isSubmitted state after 3 seconds (adjust as needed)
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setName('');
-        setEmail('');
-        setMessage('');
-      }, 2000);
+      try {
+        console.log(name);
+        const response = await fetch(`${url}/api/contact`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name, email, message }),
+        });
+        console.log('submitted',response);
+        if (response.ok) {
+          setIsSubmitted(true);
+          setTimeout(() => {
+            setIsSubmitted(false);
+            setName('');
+            setEmail('');
+            setMessage('');
+          }, 2000);
+        } else {
+          console.error('Error submitting form:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+      }
     }
   };
-  
+
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-100">
       {/* Image */}
@@ -62,69 +75,66 @@ function ContactUs() {
         <div className="text-3xl md:text-5xl text-blue-900 mb-8">
           Connect with us
         </div>
-       
-          <form name="submit-to-google-sheet" action="https://script.google.com/macros/s/AKfycbwBPbEaEIAFG0trfL45xBUr0te5XEo9d422Q3BMgogNo9a6k7VAEcPZXxh1Yn1E6pZvCg/exec" method="POST" onSubmit={handleSubmit}>
-            <Grid container direction="column" spacing={3}>
-              <Grid item>
-                <TextField
-                  label="Name"
-                  variant="outlined"
-                  fullWidth
-                  name="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  error={!!errors.name}
-                  helperText={errors.name}
-                  className="transition-all duration-300 ease-in-out transform hover:scale-105"
-                />
-              </Grid>
-              <Grid item>
-                <TextField
-                  label="Email"
-                  variant="outlined"
-                  type="mail"
-                  fullWidth
-                  value={email}
-                  name="email"
-                  onChange={(e) => setEmail(e.target.value)}
-                  error={!!errors.email}
-                  helperText={errors.email}
-                  className="transition-all duration-300 ease-in-out transform hover:scale-105"
-                />
-              </Grid>
-              <Grid item>
-                <TextField
-                  label="Message"
-                  variant="outlined"
-                  multiline
-                  rows={4}
-                  fullWidth
-                  name="message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  error={!!errors.message}
-                  helperText={errors.message}
-                  className="transition-all duration-300 ease-in-out transform hover:scale-105"
-                />
-              </Grid>
-              <Grid item>
-              <div className="flex justify-center">
-  <Button
-    type="submit"
-    variant="contained"
-    color="primary"
-    fullWidth
-    className={`bg-blue-500 hover:bg-blue-300 transition duration-300 ease-in-out transform hover:scale-105 ${isSubmitted ? 'bg-green-500 ease-in duration-500' : ''}`}
-    style={{ width: '40vw' }}
-  >
-    {isSubmitted ? 'Submitted successfully' : 'Submit'}
-  </Button>
-</div>
-
-              </Grid>
+        <form name="submit-to-google-sheet" onSubmit={handleSubmit}>
+          <Grid container direction="column" spacing={3}>
+            <Grid item>
+              <TextField
+                label="Name"
+                variant="outlined"
+                fullWidth
+                name="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                error={!!errors.name}
+                helperText={errors.name}
+                className="transition-all duration-300 ease-in-out transform hover:scale-105"
+              />
             </Grid>
-          </form>
-        
+            <Grid item>
+              <TextField
+                label="Email"
+                variant="outlined"
+                type="mail"
+                fullWidth
+                value={email}
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+                error={!!errors.email}
+                helperText={errors.email}
+                className="transition-all duration-300 ease-in-out transform hover:scale-105"
+              />
+            </Grid>
+            <Grid item>
+              <TextField
+                label="Message"
+                variant="outlined"
+                multiline
+                rows={4}
+                fullWidth
+                name="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                error={!!errors.message}
+                helperText={errors.message}
+                className="transition-all duration-300 ease-in-out transform hover:scale-105"
+              />
+            </Grid>
+            <Grid item>
+              <div className="flex justify-center">
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                  className={`bg-blue-500 hover:bg-blue-300 transition duration-300 ease-in-out transform hover:scale-105 ${isSubmitted ? 'bg-green-500 ease-in duration-500' : ''}`}
+                  style={{ width: 'fit-content', margin: 'auto' }}
+                >
+                  {isSubmitted ? 'Submitted' : 'Submit'}
+                </Button>
+              </div>
+            </Grid>
+          </Grid>
+        </form>
       </div>
     </div>
   );

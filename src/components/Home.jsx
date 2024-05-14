@@ -8,6 +8,7 @@ import Team from './Team'
 import Rotate from './Rotate'
 import { AccountContext } from './context/AccountProvider'
 import FirstScreen from './FirstScreen'
+import Text from './Text'
 // import AccountProvider from './context/AccountProvider'
 // import Carousal from './Carousal'
 
@@ -21,6 +22,7 @@ export default function Home() {
     <div  style={{backgroundColor: mode ? '#1a1a00' : 'white'}}>
       <Rotate style={{position:'absolute',margin:'50vh 5px'}}/>
     <Carousal/>
+    <Text/>
     <Card/>
    
     
