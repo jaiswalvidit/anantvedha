@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { WhatsApp, Twitter, Instagram } from '@mui/icons-material';
+import { WhatsApp, Twitter, Instagram, Phone } from '@mui/icons-material';
 import { AccountContext } from './context/AccountProvider';
 import logo1 from './images/startup/logo1.jpg'
 import logo from './images/startup/logo.jpg'
+import MailIcon from '@mui/icons-material/Mail';
+import CallIcon from '@mui/icons-material/Call';
 export default function Footer() {
   const { mode, setMode } = useContext(AccountContext);
   
@@ -34,6 +36,9 @@ console.log(mode);
           <h6 className="footer-title text-xl">Company</h6>
           <Link to="/about" className="link link-hover">About us</Link>
           <Link to="/contact" className="link link-hover">Contact</Link>
+          <Link to="mailto:info@anantvedha.com" className="link link-hover" ><MailIcon style={{paddingRight: '5px '}}/>
+          info@anantvedha.com</Link>
+          <Link to="/contact" className="link link-hover"><CallIcon style={{paddingRight: '5px '}}/>6396643912</Link>
          
         </nav>
         <nav style={{margin:isSmallScreen?'0px auto':''}}>
