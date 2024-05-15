@@ -38,7 +38,7 @@ console.log(mode);
           <Link to="/contact" className="link link-hover">Contact</Link>
           <Link to="mailto:info@anantvedha.com" className="link link-hover" ><MailIcon style={{paddingRight: '5px '}}/>
           info@anantvedha.com</Link>
-          <Link to="/contact" className="link link-hover"><CallIcon style={{paddingRight: '5px '}}/>6396643912</Link>
+          {/* <Link to="/contact" className="link link-hover"><CallIcon style={{paddingRight: '5px '}}/>6396643912</Link> */}
          
         </nav>
         <nav style={{margin:isSmallScreen?'0px auto':''}}>
