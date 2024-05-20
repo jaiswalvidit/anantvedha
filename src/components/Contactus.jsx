@@ -72,7 +72,7 @@ function ContactUs() {
 
       {/* Form */}
       <div className="w-90 md:w-1/2 p-8 bg-white shadow-lg rounded-lg" style={{ backgroundSize: 'cover', backgroundPosition: 'center', margin: '10px 20px ', padding: '20px 40px' }}>
-        <div className="text-3xl md:text-5xl text-blue-900 mb-8">
+        <div className="text-3xl md:text-5xl text-blue-900 mb-8 text-center"  >
           Connect with us
         </div>
         <form name="submit-to-google-sheet" onSubmit={handleSubmit}>
@@ -127,7 +127,7 @@ function ContactUs() {
                   color="primary"
                   fullWidth
                   className={`bg-blue-500 hover:bg-blue-300 transition duration-300 ease-in-out transform hover:scale-105 ${isSubmitted ? 'bg-green-500 ease-in duration-500' : ''}`}
-                  style={{ width: 'fit-content', margin: 'auto' }}
+                  style={{ width: 'fit-content', margin: 'auto' ,borderRadius:'20px'}}
                 >
                   {isSubmitted ? 'Submitted' : 'Submit'}
                 </Button>
