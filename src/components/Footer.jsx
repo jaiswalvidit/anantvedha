@@ -33,7 +33,7 @@ export default function Footer() {
             </Link>
           </nav>
           <nav className="text-center md:text-right" style={{margin:'0px auto'}}>
-            <h6 className="footer-title text-xl mb-4 ">Social</h6>
+            <h6 className="footer-title text-xl mb-4 text-center ">Social</h6>
             <div className="flex justify-center md:justify-end space-x-4">
               <a href="https://whatsapp.com/channel/0029Vaa5M117DAWrgQzMXs0n" target="_blank" rel="noopener noreferrer" className="social-icon bg-green-500 p-2 rounded-full">
                 <WhatsApp className="text-white" />

@@ -7,10 +7,9 @@ import About from './components/About';
 import NewHeader from './components/NewHeader';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Team from './components/Team';
-import AccountProvider from './components/context/AccountProvider';
-import FirstScreen from './components/FirstScreen';
 import Footer from './components/Footer';
 import Rotate from './components/Rotate';
+import AccountProvider from './components/context/AccountProvider';
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
       <Router>
         <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
           <NewHeader />
-          {/* <FirstScreen/> */}
           <div style={{ flex: 1, overflow: 'auto' }}>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -27,7 +25,7 @@ function App() {
               <Route path="/team" element={<Team />} />
             </Routes>
           </div>
-          <Rotate style={{position:'absolute',margin:'50vh 5px'}}/>
+          <Rotate style={{ position: 'absolute', margin: '50vh 5px' }} />
           <Footer />
         </div>
       </Router>
